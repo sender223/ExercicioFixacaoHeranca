@@ -10,7 +10,7 @@ namespace ExercicioFixacaoHeranca.Entidades {
         public ProdutoImportado() { }
 
         public ProdutoImportado(string nome, double preco, double taxaAlfandega) :base(nome, preco) {
-            TaxaAlfandega = taxaAlfandega;
+            TaxaAlfandega = taxaAlfandega;.
         }
 
 
