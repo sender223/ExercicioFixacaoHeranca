@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Globalization;
 
 namespace ExercicioFixacaoHeranca.Entidades {
     class ProdutoImportado : Produto {
@@ -9,11 +7,22 @@ namespace ExercicioFixacaoHeranca.Entidades {
 
         public ProdutoImportado() { }
 
-        public ProdutoImportado(string nome, double preco, double taxaAlfandega) :base(nome, preco) {
-            TaxaAlfandega = taxaAlfandega;.
+        public ProdutoImportado(string nome, double preco, double taxaAlfandega) 
+            :base(nome, preco) {
+            TaxaAlfandega = taxaAlfandega;
         }
 
+        public double PrecoTotal() {
+            return Preco + TaxaAlfandega;
+        }
 
-
+        public override string TabelaPreco() {
+            return Nome
+                + " $ "
+                + PrecoTotal().ToString("F2", CultureInfo.InvariantCulture)
+                + " (Customs fee: $ "
+                + TaxaAlfandega.ToString("F2", CultureInfo.InvariantCulture)
+                + ")";
+        }
     }
 }
