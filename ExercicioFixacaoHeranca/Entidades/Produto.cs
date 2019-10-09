@@ -1,5 +1,4 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
 
 namespace ExercicioFixacaoHeranca.Entidades {
     class Produto {
@@ -12,7 +11,8 @@ namespace ExercicioFixacaoHeranca.Entidades {
             Nome = nome;
             Preco = preco;
         }
-
+        //aqui criamos um método com permissão para que as subclasses possam acessar e
+        //modificar.
         public virtual string TabelaPreco() {
             return "Nome: " + Nome
                     + "Preço: " + Preco.ToString("F2", CultureInfo.InvariantCulture);
